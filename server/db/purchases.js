@@ -1,25 +1,16 @@
 const connection = require('./connection')
 
 module.exports = {
-  getLearners,
-  addLearner
+  getPurchases,
+  addPurchase
 }
 
-function getLearners (db = connection) {
-  return db('learners').select()
+function getPurchases (db = connection) {
+  return db('purchases').select('dollar_amout as dollarAmount', 'quantity')
 }
 
-function addLearner (learner, db = connection) {
-  const learnerEntity = {
-    name: learner.name,
-    star_sign: learner.starSign
-  }
-  return db('learners')
-    .insert(learnerEntity)
-    .then(([id]) => {
-      return {
-        id,
-        ...learner
-      }
-    })
+function addPurchase (purchase, db = connection) {
+  return db('purchases')
+    .insert(purchase)
+    .then(latestPurchase => latestPurchase)
 }

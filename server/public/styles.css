@@ -19,7 +19,7 @@ body {
 }
 
 .forms {
-  border: 3px solid black;
+  border: 2.5px solid black;
   width: 20rem;
   margin: auto;
   margin-top: 0.5%;
@@ -27,6 +27,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   font-family: Helvetica, sans-serif;
+  text-align: center;
 }
 
 .form-submit-btn {
