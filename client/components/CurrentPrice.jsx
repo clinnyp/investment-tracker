@@ -17,7 +17,7 @@ function CurrentPrice () {
   return (
     <div className='price-card'>
       <h1>Ethereum</h1>
-      <p>USD:{price} </p>
+      <p>USD:${price} </p>
     </div>
   )
 }
