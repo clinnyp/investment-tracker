@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express')
 
-const learnerRoutes = require('./routes')
+const l = require('./routes')
 
 const server = express()
 

@@ -6,9 +6,9 @@ function UserForm () {
       <form >
         <div>
           <label htmlFor='name'>Eth amount:</label>
-          <input id='name' name='name' />
+          <input className='form-input' id='name' name='name' />
         </div>
-        <button>Add new learner</button>
+        <button className='form-submit-btn'>Add to portfolio</button>
       </form>
     </div>
   )
