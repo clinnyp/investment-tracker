@@ -1,0 +1,18 @@
+body {
+  color: black;
+}
+
+.price-card {
+  border: 3px solid black;
+  width: 12%;
+  padding: 0.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.price-card p {
+  font-size: 1.5rem;
+ 
+}
