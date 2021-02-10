@@ -2,15 +2,11 @@ import React, { useState, useEffect } from 'react'
 
 function UserForm () {
   return (
-    <div>
-      <form onSubmit={onSubmit}>
+    <div className='forms'>
+      <form >
         <div>
-          <label htmlFor='name'>Learner&apos;s name:</label>
-          <input id='name' name='name' onChange={onChange} />
-        </div>
-        <div>
-          <label htmlFor='starSign'>Learner&apos;s sign:</label>
-          <input id='starSign' name='starSign' onChange={onChange} />
+          <label htmlFor='name'>Eth amount:</label>
+          <input id='name' name='name' />
         </div>
         <button>Add new learner</button>
       </form>
