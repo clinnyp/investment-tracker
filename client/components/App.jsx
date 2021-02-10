@@ -1,13 +1,12 @@
 import React from 'react'
 
-import Learners from './Learners'
+import CurrentPrice from './CurrentPrice'
 
 const App = () => {
   return (
-    <>
-      <h1>Learners Rock!</h1>
-      <Learners />
-    </>
+    <div>
+      <CurrentPrice />
+    </div>
   )
 }
 

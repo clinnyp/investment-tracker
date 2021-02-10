@@ -42,7 +42,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "knex": "^0.21.17",
-    "sqlite3": "^5.0.1",
+    "sqlite3": "^5.0.0",
     "superagent": "^6.1.0"
   },
   "devDependencies": {
