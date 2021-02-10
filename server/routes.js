@@ -1,15 +1,15 @@
 const express = require('express')
 
-const db = require('./db/learners')
+const db = require('./db/purchases')
 
 const router = express.Router()
 
 module.exports = router
 
 router.get('/', (req, res) => {
-  db.getLearners()
-    .then(learners => {
-      res.json(learners)
+  db.getPurchases()
+    .then(purchase => {
+      res.json(purchase)
       return null
     })
     .catch(err => {
@@ -19,10 +19,10 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const learner = req.body
-  db.addLearner(learner)
-    .then(newLearner => {
-      res.json(newLearner)
+  const purchase = req.body
+  db.addPurchase(purchase)
+    .then(newPurchase => {
+      res.json(newPurchase)
       return null
     })
     .catch(err => {
