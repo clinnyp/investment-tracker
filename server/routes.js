@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const purchase = req.body
+  console.log('im here')
   db.addPurchase(purchase)
     .then(newPurchase => {
       res.json(newPurchase)
