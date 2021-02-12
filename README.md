@@ -6,6 +6,7 @@ Setup repo
 npm i
 npm run migrate:latest
 npm run seed:run
+npm run dev
 http://localhost:3000
 ```
 

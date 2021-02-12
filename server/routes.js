@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
     })
     .catch(err => {
       res.status(500).send(err.message)
-      return null
     })
 })
 
