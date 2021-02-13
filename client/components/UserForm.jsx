@@ -26,14 +26,16 @@ function UserForm () {
 
   return (
     <div className='forms'>
-      <form >
+      <form>
         <div>
           <label htmlFor='name'>Eth amount:</label>
           <input type='number' className='form-input' onChange={onChange} id='quantity' name='quantity' />
         </div>
-        <label htmlFor='name'>Purchase price:</label>
-        <input type='number' className='form-input' onChange={onChange} id='dollar_amount' name='dollar_amount' />
-        <button onClick={clickHandler} className='form-submit-btn'>Add to portfolio</button>
+        <div>
+          <label htmlFor='name'>Purchase price:</label>
+          <input type='number' className='form-input' onChange={onChange} id='dollar_amount' name='dollar_amount' />
+        </div>
+        <button onSubmit={clickHandler} className='form-submit-btn'>Add to portfolio</button>
       </form>
     </div>
   )

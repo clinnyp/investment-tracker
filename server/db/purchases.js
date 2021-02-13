@@ -6,7 +6,7 @@ module.exports = {
 }
 
 function getPurchases (db = connection) {
-  return db('purchases').select('dollar_amout as dollarAmount', 'quantity')
+  return db('purchases').select()
 }
 
 function addPurchase (purchase, db = connection) {
