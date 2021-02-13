@@ -7,12 +7,13 @@ function UserForm () {
     dollar_amount: 0
   })
 
-  function clickHandler () {
+  function onSubmit (event) {
+    event.preventDefault()
     request.post('/api/v1/purchases')
       .send(purchase)
-      .set('Accept', 'application/json')
+      .set('accept', 'json')
       .then(res => console.log(res))
-      .catch(err => console.error(err))
+      .catch(console.error)
   }
 
   function onChange (e) {
@@ -26,7 +27,7 @@ function UserForm () {
 
   return (
     <div className='forms'>
-      <form>
+      <form onSubmit={onSubmit}>
         <div>
           <label htmlFor='name'>Eth amount:</label>
           <input type='number' className='form-input' onChange={onChange} id='quantity' name='quantity' />
@@ -35,7 +36,7 @@ function UserForm () {
           <label htmlFor='name'>Purchase price:</label>
           <input type='number' className='form-input' onChange={onChange} id='dollar_amount' name='dollar_amount' />
         </div>
-        <button onSubmit={clickHandler} className='form-submit-btn'>Add to portfolio</button>
+        <button className='form-submit-btn'>Add to portfolio</button>
       </form>
     </div>
   )
