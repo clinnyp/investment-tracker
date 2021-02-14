@@ -23,9 +23,9 @@ function ListPortfolio () {
     <div className='portfolio-view'>
       <h2>Your portfolio below</h2>
       <ul>
-        {portfolio.map(({ id, quantity, dollar_amount: dollarAmount }) => {
-          return <li key={id}>{`Eth Amount: ${quantity} $: ${dollarAmount}`}</li>
-        })}
+        {portfolio.map(({ id, quantity, dollar_amount: dollarAmount }) => (
+          <li key={id}>{`Eth Amount: ${quantity} $: ${dollarAmount}`}</li>
+        ))}
       </ul>
     </div>
   )
