@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import request from 'superagent'
+import { Link } from 'react-router-dom'
 
 function UserForm () {
   const [purchase, setPurchase] = useState({
@@ -38,6 +39,9 @@ function UserForm () {
         </div>
         <button className='form-submit-btn'>Add to portfolio</button>
       </form>
+      <div>
+        <button><Link to='/portfolio'>Show your portfolio</Link></button>
+      </div>
     </div>
   )
 }
