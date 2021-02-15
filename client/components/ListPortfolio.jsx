@@ -24,7 +24,7 @@ function ListPortfolio () {
       <h2>Your portfolio below</h2>
       <ul>
         {portfolio.map(({ id, quantity, dollar_amount: dollarAmount }) => (
-          <li key={id}>{`Eth Amount: ${quantity} $: ${dollarAmount}`}</li>
+          <li key={id}>{`Amount: ${quantity} ETH  $: ${dollarAmount}`}<button>Delete</button><button>Edit</button></li>
         ))}
       </ul>
     </div>
