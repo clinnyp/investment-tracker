@@ -40,7 +40,7 @@ function UserForm () {
         <button className='form-submit-btn'>Add to portfolio</button>
       </form>
       <div>
-        <button><Link to='/portfolio'>Show your portfolio</Link></button>
+        <button><Link to='/portfolio' style={{ textDecoration: 'none', color: 'inherit' }} >Show your portfolio</Link></button>
       </div>
     </div>
   )
