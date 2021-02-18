@@ -19,7 +19,6 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const purchase = req.body
-  console.log('im here')
   db.addPurchase(purchase)
     .then(newPurchase => {
       res.json(newPurchase)
@@ -28,4 +27,14 @@ router.post('/', (req, res) => {
     .catch(err => {
       res.status(500).send(err.message)
     })
+})
+
+router.delete('/', (req, res) => {
+  const { id } = req.body
+  db.deletePurchase(id)
+    .then(() => {
+      res.set(200).send('OK')
+      return null
+    })
+    .catch(err => console.error(err))
 })
