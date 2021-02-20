@@ -38,3 +38,8 @@ router.delete('/', (req, res) => {
     })
     .catch(err => console.error(err))
 })
+
+router.patch('/', (req, res) => {
+  const { quantity, dollar_amount: dollarAmount } = req.body
+    db.updatePurchase()
+})

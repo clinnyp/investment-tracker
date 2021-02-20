@@ -14,25 +14,35 @@ function ListPortfolio () {
   function getPortfolio () {
     request.get('/api/v1/purchases')
       .then((res) => {
-        console.log(res.body)
         setPortfolio(res.body)
         return null
       })
       .catch(err => console.error(err))
   }
 
-  function onClick (e) {
+  function onClickDelete (e) {
     const { id } = e.target
     e.preventDefault()
     request.delete('/api/v1/purchases')
       .send({ id })
       .set('Accept', 'application/json')
       .then(res => {
-        console.log('sdsdsdsd')
         getPortfolio()
         return null
       })
       .catch(err => console.error(err))
+  }
+
+  function onClickEdit (e) {
+    e.preventDefault()
+    const { id } = e.target
+    // request.patch('/api/v1/purchases')
+    //   .send({ id })
+    //   .set('Accept', 'application/json')
+    //   .then(res => {
+    //     return null
+    //   })
+    //   .catch(err => console.error(err))
   }
 
   const linkStyle = {
@@ -46,7 +56,9 @@ function ListPortfolio () {
       <Link to='/' style={linkStyle}><p>Add more</p></Link>
       <ul>
         {portfolio.map(({ id, quantity, dollar_amount: dollarAmount }) => (
-          <li key={id}>{`Amount: ${quantity} ETH  $: ${dollarAmount}`}<button id={id} onClick={onClick}>Delete</button><button>Edit</button></li>
+          <li key={id}>{`Amount: ${quantity} ETH  $: ${dollarAmount}`}<button id={id}
+            onClick={onClickDelete}>Delete</button><button id={id} onClick={onClickEdit}>
+            <Link to={`/edit/${id}`}>Edit</Link></button></li>
         ))}
       </ul>
     </div>
