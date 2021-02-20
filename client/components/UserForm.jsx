@@ -10,6 +10,10 @@ function UserForm () {
 
   function onSubmit (event) {
     event.preventDefault()
+
+    const { quantity, dollar_amount: dollarAmount } = purchase
+    if (quantity === 0 && dollarAmount === 0) return
+
     request.post('/api/v1/purchases')
       .send(purchase)
       .set('accept', 'json')

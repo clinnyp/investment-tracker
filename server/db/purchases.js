@@ -3,7 +3,8 @@ const connection = require('./connection')
 module.exports = {
   getPurchases,
   addPurchase,
-  deletePurchase
+  deletePurchase,
+  updatePurchase
 }
 
 function getPurchases (db = connection) {
@@ -21,4 +22,11 @@ function deletePurchase (id, db = connection) {
     .where('id', id)
     .first()
     .delete()
+}
+
+function updatePurchase (id, db = connection) {
+  return db('purchases')
+    .where('id', id)
+    .first()
+    .update()
 }
