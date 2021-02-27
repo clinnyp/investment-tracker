@@ -4,8 +4,8 @@ Setup repo
 
 ```sh
 npm i
-npm run migrate:latest
-npm run seed:run
+npm run knex migrate:latest
+npm run knex seed:run
 npm run dev
 http://localhost:3000
 ```
