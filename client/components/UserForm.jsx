@@ -27,7 +27,6 @@ function UserForm () {
       ...purchase,
       [name]: Number(value)
     })
-    console.log(purchase)
   }
 
   return (

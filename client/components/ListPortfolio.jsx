@@ -33,18 +33,6 @@ function ListPortfolio () {
       .catch(err => console.error(err))
   }
 
-  function onClickEdit (e) {
-    e.preventDefault()
-    const { id } = e.target
-    // request.patch('/api/v1/purchases')
-    //   .send({ id })
-    //   .set('Accept', 'application/json')
-    //   .then(res => {
-    //     return null
-    //   })
-    //   .catch(err => console.error(err))
-  }
-
   const linkStyle = {
     textDecoration: 'none',
     textAlign: 'center'
@@ -57,8 +45,8 @@ function ListPortfolio () {
       <ul>
         {portfolio.map(({ id, quantity, dollar_amount: dollarAmount }) => (
           <li key={id}>{`Amount: ${quantity} ETH  $: ${dollarAmount}`}<button id={id}
-            onClick={onClickDelete}>Delete</button><button id={id} onClick={onClickEdit}>
-            <Link to={`/edit/${id}`}>Edit</Link></button></li>
+            onClick={onClickDelete}>Delete</button><button>
+            <Link to={`/edit/${id}`} >Edit</Link></button></li>
         ))}
       </ul>
     </div>

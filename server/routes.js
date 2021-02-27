@@ -40,6 +40,16 @@ router.delete('/', (req, res) => {
 })
 
 router.patch('/', (req, res) => {
-  const { quantity, dollar_amount: dollarAmount } = req.body
-    db.updatePurchase()
+  const { id, quantity, dollar_amount: dollarAmount } = req.body
+  const numId = Number(id)
+
+  const obj = {
+    quantity,
+    dollarAmount
+  }
+  db.updatePurchase(numId, obj)
+    .then(updatePurchase => res.json(updatePurchase))
+    .catch(err => {
+      res.status(500).send('DATABASE EROOR: ' + err.message)
+    })
 })

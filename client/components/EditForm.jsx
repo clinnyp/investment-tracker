@@ -2,19 +2,22 @@ import React, { useState } from 'react'
 
 import request from 'superagent'
 
-function EditForm () {
+function EditForm (props) {
   const [purchase, setPurchase] = useState({
+    id: 0,
     quantity: 0,
     dollar_amount: 0
   })
+
+  const id = props.match.params.id
 
   function onChange (e) {
     const { name, value } = e.target
     setPurchase({
       ...purchase,
-      [name]: Number(value)
+      [name]: Number(value),
+      id
     })
-    console.log(purchase)
   }
 
   function onSubmit (event) {
@@ -24,7 +27,7 @@ function EditForm () {
     if (quantity === 0 || dollarAmount === 0) return
 
     request.patch('/api/v1/purchases')
-      .send({id})
+      .send(purchase)
       .set('accept', 'json')
       .then(res => console.log(res))
       .catch(console.error)

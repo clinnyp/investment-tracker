@@ -24,9 +24,13 @@ function deletePurchase (id, db = connection) {
     .delete()
 }
 
-function updatePurchase (id, db = connection) {
+function updatePurchase (id, obj, db = connection) {
+  const { quantity, dollarAmount } = obj
   return db('purchases')
     .where('id', id)
     .first()
-    .update()
+    .update({
+      quantity,
+      dollar_amount: dollarAmount
+    })
 }
